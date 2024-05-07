@@ -118,7 +118,7 @@ const Explore = () => {
             disabled={currentNewsIndex === 0}>
             <Left width={20} height={20} />
           </TouchableOpacity>
-          <Text>
+          <Text style={styles.pageText}>
             {currentNewsIndex + 1} / {news.length}
           </Text>
           <TouchableOpacity
@@ -130,14 +130,14 @@ const Explore = () => {
             <Pressable
               onPress={() => handlePageChange(page - 2)}
               style={{display: page <= 2 ? 'none' : 'flex'}}>
-              <Text>{page - 2}</Text>
+              <Text style={styles.pageText}>{page - 2}</Text>
             </Pressable>
           )}
           {page > 1 && (
             <Pressable
               onPress={() => handlePageChange(page - 1)}
               style={{display: page <= 1 ? 'none' : 'flex'}}>
-              <Text>{page - 1}</Text>
+              <Text style={styles.pageText}>{page - 1}</Text>
             </Pressable>
           )}
           <Text style={styles.activePage}>{page}</Text>
@@ -145,14 +145,14 @@ const Explore = () => {
             <Pressable
               onPress={() => handlePageChange(page + 1)}
               style={{display: page >= 11 ? 'none' : 'flex'}}>
-              <Text>{page + 1}</Text>
+              <Text style={styles.pageText}>{page + 1}</Text>
             </Pressable>
           )}
           {page < 10 && (
             <Pressable
               onPress={() => handlePageChange(page + 2)}
               style={{display: page >= 10 ? 'none' : 'flex'}}>
-              <Text>{page + 2}</Text>
+              <Text style={styles.pageText}>{page + 2}</Text>
             </Pressable>
           )}
         </View>

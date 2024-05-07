@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   viewContainer: {
     flex: 1,
-    backgroundColor: '#222',
+    backgroundColor: '#070F2B',
     justifyContent: 'center',
     alignItems: 'center',
   },

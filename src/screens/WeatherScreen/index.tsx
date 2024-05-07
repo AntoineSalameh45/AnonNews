@@ -11,7 +11,6 @@ const Weather = () => {
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
 
-  // Define fetchWeatherData function outside of useEffect
   const fetchWeatherData = async () => {
     try {
       const currentResponse = await fetchWeatherApi.get(
@@ -34,7 +33,7 @@ const Weather = () => {
 
   useFocusEffect(
     React.useCallback(() => {
-      fetchWeatherData(); // Corrected function name
+      fetchWeatherData();
     }, []),
   );
 
@@ -75,12 +74,12 @@ const Weather = () => {
             <Text style={styles.forecastTitle}>3-Day Weather Forecast</Text>
             {forecastData.map((day, index) => (
               <View key={index} style={styles.forecastItem}>
-                <Text style={styles.forecastDate}>{day.date}</Text>
-                <Text style={styles.forecastTemp}>
+                <Text style={styles.text}>{day.date}</Text>
+                <Text style={styles.text}>
                   <Max width={15} height={15} /> {day.day.maxtemp_c}°C,{' '}
                   <Min width={15} height={15} /> {day.day.mintemp_c}°C
                 </Text>
-                <Text style={styles.forecastCondition}>
+                <Text style={styles.text}>
                   {day.day.condition.text}
                 </Text>
               </View>

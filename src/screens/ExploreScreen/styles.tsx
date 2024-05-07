@@ -74,5 +74,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#fff',
   },
+  pageText: {color: '#fff'},
 });
 export default styles;

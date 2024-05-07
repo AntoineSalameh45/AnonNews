@@ -60,7 +60,7 @@ const Finance = () => {
       source={require('../../assets/img6.jpg')}
       style={styles.backgroundImage}>
       <SafeAreaView>
-        <View>
+        <View style={styles.newsContainer}>
           {news.length > 0 ? (
             <FlatList
               data={news}

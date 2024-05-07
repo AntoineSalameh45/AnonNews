@@ -16,7 +16,7 @@ export const signup = createAsyncThunk<
 
   try {
     const data = await signupApi(email, password, token_expires_in ?? '');
-    await setValue('accessToken', data.accessToken, 30);
+    await setValue('accessToken', data.accessToken, 60);
     await setValue('refreshToken', data.refreshToken, 30);
     return data;
   } catch (error: any) {

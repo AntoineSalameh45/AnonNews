@@ -75,5 +75,9 @@ const styles = StyleSheet.create({
     borderTopColor: '#F8F6E3',
     justifyContent: 'space-evenly',
   },
+  text: {
+    color: '#fff',
+    fontSize: 14,
+  },
 });
 export default styles;

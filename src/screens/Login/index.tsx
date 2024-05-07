@@ -24,9 +24,7 @@ const Login = ({navigation, setIsAuthenticated}) => {
       );
       if (response.payload) {
         const accessToken = response.payload.accessToken;
-        await setValue('accessToken', accessToken, 30);
-        setIsAuthenticated(true);
-        setLoginSuccess(true);
+        await setValue('accessToken', accessToken, 60);
       } else {
         console.error('Login action did not return a payload:', response);
       }
@@ -39,6 +37,8 @@ const Login = ({navigation, setIsAuthenticated}) => {
       );
     } finally {
       setLoading(false);
+      setIsAuthenticated(true);
+      setLoginSuccess(true);
     }
   };
 

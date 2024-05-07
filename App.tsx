@@ -30,7 +30,7 @@ const App = () => {
 
   const handleLogin = async (accessToken, setIsAuthenticated?) => {
     try {
-      await setValue('accessToken', accessToken, 30);
+      await setValue('accessToken', accessToken, 60);
       setIsAuthenticated(true);
     } catch (error) {
       console.error('Error setting access token:', error);

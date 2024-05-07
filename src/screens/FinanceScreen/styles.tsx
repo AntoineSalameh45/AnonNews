@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
   },
+  newsContainer: {paddingHorizontal: 10, paddingTop: 10},
   newsItem: {
     backgroundColor: '#ffffffaa',
     marginBottom: 10,

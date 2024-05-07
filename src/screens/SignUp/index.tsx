@@ -60,6 +60,9 @@ const Signup = ({navigation}: any) => {
     }
   };
 
+  // Disable button if email or password is empty
+  const isDisabled = !email || !password;
+
   return (
     <>
       <ImageBackground
@@ -85,9 +88,10 @@ const Signup = ({navigation}: any) => {
               placeholderTextColor="#22222269"
             />
             <TouchableOpacity
-              style={styles.button}
+              style={[styles.button, {opacity: isDisabled ? 0.5 : 1}]} // Reduce opacity if disabled
               onPress={() => handleSignup(email, password)}
-              disabled={loading}>
+              disabled={loading || isDisabled} // Disable if loading or inputs are empty
+            >
               <Text style={styles.buttonText}>
                 {loading ? 'Creating your account...' : 'Create'}
               </Text>

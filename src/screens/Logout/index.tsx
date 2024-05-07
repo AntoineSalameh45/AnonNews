@@ -23,6 +23,9 @@ const Logout = ({navigation}) => {
     <View style={styles.viewContainer}>
       <View style={styles.propContainer}>
         <Text style={styles.text}>Are you sure you want to log out?</Text>
+        <Text style={styles.text}>
+          (You will stay logged in for this session)
+        </Text>
         <View style={styles.choices}>
           <Pressable style={styles.yesButton} onPress={handleLogout}>
             <Text style={styles.text}>Yes</Text>

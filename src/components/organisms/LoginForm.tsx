@@ -51,6 +51,8 @@ const LoginForm = ({handleLogin, navigation}: iLoginFormProps) => {
     navigation.navigate('Signup');
   };
 
+  const isDisabled = !email || !password;
+
   return (
     <>
       <View style={styles.container}>
@@ -72,9 +74,9 @@ const LoginForm = ({handleLogin, navigation}: iLoginFormProps) => {
             placeholderTextColor="#222222aa"
           />
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, {opacity: isDisabled ? 0.5 : 1}]}
             onPress={handleSubmit}
-            disabled={loading}>
+            disabled={loading || isDisabled}>
             <Text style={styles.buttonText}>
               {loading ? 'Signing in...' : 'Sign in'}
             </Text>

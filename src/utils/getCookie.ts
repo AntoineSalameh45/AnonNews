@@ -1,12 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const setValue = async (
-  key: string,
-  value: string,
-  expiryInMinutes: number,
-) => {
+const setValue = async (key: string, value: string, expireIn: number) => {
   const now = new Date().getTime();
-  const expiry = now + expiryInMinutes * 60000;
+  const expiry = now + expireIn * 60000;
   const data = JSON.stringify({value, expiry});
 
   try {
