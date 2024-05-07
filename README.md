@@ -2,7 +2,7 @@
 
 # AnonNews
 
-AnonNews is a news app that provides users with access to explore news articles, view weather forecasts based on their IP address, read finance-related news, and manage their login/signup credentials.
+AnonNews is a news app built using React Native CLI (v0.74.0) that provides users with access to explore news articles, view weather forecasts based on their IP address, read finance-related news, and manage their login/signup credentials. It requires NDK (Side by side) 26.1.10909125 for compatibility.
 
 ## Features
 
@@ -16,14 +16,19 @@ AnonNews is a news app that provides users with access to explore news articles,
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/AnonNews.git`
+1. Clone the repository: `git clone https://github.com/AntoineSalameh45/AnonNews.git`
 2. Navigate to the project directory: `cd AnonNews`
 3. Install dependencies: `npm install`
+
+## Requirements
+
+- React Native CLI v0.74.0
+- NDK (Side by side) 26.1.10909125
 
 ## Usage
 
 1. Start the development server: `npm start`
-2. Open the app on your emulator or device using Expo.
+2. Open the app on your emulator or device.
 
 ## Contributing
 
@@ -38,3 +43,9 @@ We welcome contributions from the community! Please follow these guidelines:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
+Additionally, here's the link to the repository: [AnonNews Repository](https://github.com/AntoineSalameh45/AnonNews.git)
+
+And the web version repository: [AnonNewsWeb Repository](https://github.com/AntoineSalameh45/AnonNewsWeb.git)
+
+Both versions use the same store, API, and everything. Feel free to modify this README template further as needed.
