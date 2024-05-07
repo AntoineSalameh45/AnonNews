@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, TextInput, TouchableOpacity, Text, Alert} from 'react-native';
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  Alert,
+  Pressable,
+} from 'react-native';
 import styles from '../../screens/Login/styles';
 
 interface iLoginFormProps {
@@ -39,6 +46,7 @@ const LoginForm = ({handleLogin, navigation}: iLoginFormProps) => {
       setLoading(false);
     }
   };
+
   const toSignup = () => {
     navigation.navigate('Signup');
   };
@@ -73,11 +81,11 @@ const LoginForm = ({handleLogin, navigation}: iLoginFormProps) => {
           </TouchableOpacity>
           <View style={styles.signupContainer}>
             <Text style={styles.signupText}>Not a member?</Text>
-            <TouchableOpacity onPress={toSignup}>
+            <Pressable onPress={toSignup}>
               <Text style={styles.signupLink}>
                 Sign up to see our latest news
               </Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
       </View>

@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   ImageBackground,
+  Alert,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {signup} from '../../store/user/userSlice';
@@ -27,15 +28,36 @@ const Signup = ({navigation}: any) => {
     setPassword(text);
   };
 
-  const handleSignup = (email: string, password: string) => {
-    dispatch(
-      signup({
-        email,
-        password,
-        token_expires_in: undefined,
-      }),
-    );
-    console.log(email, password);
+  const handleSignup = async (email: string, password: string) => {
+    setLoading(true);
+    try {
+      await dispatch(
+        signup({
+          email,
+          password,
+          token_expires_in: undefined,
+        }),
+      );
+      setLoading(false);
+      Alert.alert(
+        'Account Created',
+        'Your account has been successfully created.',
+        [
+          {
+            text: 'OK',
+            onPress: () => navigation.navigate('Login'),
+          },
+        ],
+      );
+    } catch (error) {
+      console.error('Error signing up:', error);
+      setLoading(false);
+      Alert.alert(
+        'Error',
+        'An error occurred during signup. Please try again.',
+        [{text: 'OK'}],
+      );
+    }
   };
 
   return (
@@ -64,7 +86,8 @@ const Signup = ({navigation}: any) => {
             />
             <TouchableOpacity
               style={styles.button}
-              onPress={() => handleSignup(email, password)}>
+              onPress={() => handleSignup(email, password)}
+              disabled={loading}>
               <Text style={styles.buttonText}>
                 {loading ? 'Creating your account...' : 'Create'}
               </Text>

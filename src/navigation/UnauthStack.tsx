@@ -6,12 +6,12 @@ import Login from '../screens/Login';
 
 const UnauthStackTab = createStackNavigator<RootStackParamList>();
 
-const UnauthStack = ({navigation, handleLogin, setIsAuthenticated}) => {
+const UnauthStack = ({handleLogin, setIsAuthenticated}) => {
   return (
     <UnauthStackTab.Navigator>
       <UnauthStackTab.Screen
         name="Login"
-        children={() => (
+        children={({navigation}) => (
           <Login
             handleLogin={handleLogin}
             setIsAuthenticated={setIsAuthenticated}
@@ -20,7 +20,6 @@ const UnauthStack = ({navigation, handleLogin, setIsAuthenticated}) => {
         )}
         options={{headerShown: false}}
       />
-
       <UnauthStackTab.Screen
         name="Signup"
         component={Signup}
